@@ -1,0 +1,65 @@
+ private void texttodouble(Context context, String fileContent) {
+        one_item();
+        mid_item();
+        lasat_item(context);
+    }
+
+    private void lasat_item(Context context) {
+       int p= fileContent.length()-1;
+
+        for(int i=p-3;i>(p-12);i--){
+            if(fileContent.charAt(i)==' '){
+              
+                  gh(i+1,p,context);
+                break;
+            }
+        }
+            }
+
+    private void one_item() {
+        String h="";
+        double d=0;
+        for(int s=0;s<7;s++){
+          if(fileContent.charAt(s)!=' '){
+              h+=fileContent.charAt(s);
+          }
+          else {break;}
+        }
+        d=Double.parseDouble(h);
+        Log.e("b=",""+d);
+    }
+
+    private void mid_item() {
+        sd(0,fileContent.length(),getApplicationContext());
+
+    }
+
+      public void gh(int i, int j, Context context){
+        String sum = "";
+        String h;
+        double ft = 0;
+        for(int b=i;b<=j;b++){
+            sum += fileContent.charAt(b) ;
+        }
+    ft = Double.parseDouble(sum);
+        Log.e("b=",""+ft);
+
+    }
+public void sd(int i,int j,Context context){
+      Toast.makeText(context,""+(j-2),Toast.LENGTH_SHORT).show();///last space
+    for(int b=6;b<=j-1;b++){
+        if(fileContent.charAt(b)==' '){
+            for(int y=b-1;y>b-7;y--){
+            if(fileContent.charAt(y)==' '){
+                Log.e("y=",""+(y+1));
+                Log.e("b=",""+b);
+                gh(y+1,b,context);
+
+                break;
+            }
+
+            }
+        }
+
+    }
+}
